@@ -2,8 +2,11 @@ function funcAddNewTask() {
     // take Input (maybe proof it if its empty) an write it underneath <form>
     //First: take inputfield into an variable..
     let userInput = document.getElementById("newTask").value;
-    console.log('Hello' + userInput);
+    saveEl.innerHTML += '<br>' + userInput;
     //second: put it into an extra-HTML/CSS Text-Block (as variable)
+    document.getElementById("newTask").value = "";
+    
+
     //third: write the whole thing onto the page
 }
 console.log('Hello' + userInput);
@@ -18,3 +21,5 @@ function funcChangeTask(){
 function funcDeleteTask(){
     //delete the whohle task from the site
 }
+
+
