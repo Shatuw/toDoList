@@ -4,19 +4,20 @@
     box-sizing: border-box;
     color: black;
     font-family: 'Finlandica', sans-serif;
-
-
 }
+
+
 body{
     height: 100vh;
-    background-color: #FEFF86;
+    background-color: #FEFF86 !important;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
-    align-items: center;
-        
+    align-items: center;  
 }
-header{
+
+
+header {
     display: flex;
     justify-content: space-between;
     padding: 2em;
@@ -24,17 +25,24 @@ header{
     flex-wrap: wrap;
     background-color: #B9E9FC;
 }
+
+
 header ul{
     display: flex;
     list-style: none;
     gap: 1em;
 
 }
+
+
 a{
-    text-decoration: none;
+    text-decoration: none !important;
+    color: rgb(72, 79, 126)!important;
 }
+
+
 a:hover{
-    text-decoration: underline;
+    text-decoration:line-through !important;
 }
 
 
@@ -44,33 +52,31 @@ a:hover{
     padding-top: 10px; 
 }
 
+
 main{
     width:350px ;
     height: 100vh;
     padding: 1em;
     overflow: auto;
 }
-footer{
-    padding: 3em;
-    width: 100%;
-    background-color: #B9E9FC;
-    text-align: center;
-}
-section{
-    /* border:1px solid red; */
-}
-section h2{
+
+
+/* section h3{
     padding: 1rem;
-}
+} */
+
+
 section form{
-    background-color: #B9E9FC;
+    background-color: transparent !important;;
     width: 100%;
     height: 5rem;
     display: flex;
     align-items: center;
-    gap: 0.2rem;
-    padding: 0.2rem;
+    gap: 0.6rem;
+    border-radius: 0.5rem;
 }
+
+
 #addNewTask{
     font-size: 1rem;
     height: 3rem;
@@ -79,14 +85,57 @@ section form{
     background-color: #B0DAFF;
     /* border: none; */
 }
+
+
+.new-task-btn{
+    border:none;
+    background-color:#f9f9b3 !important;
+ }
+
+ .new-task-btn:hover{
+    background-color:#d1d1b2 !important;
+ }
+
+ li {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    margin-right: 67px;
+
+  }
+  
+  li button {
+    align-self: flex-end;
+  }
+
+
 #newTask{
     font-size: 1.5rem;
     padding: 0.3rem;
     width: 80%;
     height: 3rem;
-
 }
 
 .tasklist {
     padding-top: 15px;
+}
+
+.completed {
+    text-decoration: line-through;
+    font-style: italic;
+}
+
+/* hides buttons when completed button is clicked */
+.completed button {
+display: none;
+}
+  
+
+footer{
+    padding: 3em;
+    width: 100%;
+    background-color: #B9E9FC;
+    text-align: center;
 }
