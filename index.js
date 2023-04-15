@@ -1,6 +1,8 @@
 function funcAddNewTask() {
     // take Input (maybe proof it if its empty) an write it underneath <form>
+   
     //First: take inputfield into an variable..
+   
     let userInput = document.getElementById("newTask").value;
     saveEl.innerHTML += '<br>' + userInput;
     //second: put it into an extra-HTML/CSS Text-Block (as variable)
@@ -9,7 +11,8 @@ function funcAddNewTask() {
 
     //third: write the whole thing onto the page
 }
-console.log('Hello' + userInput);
+
+
 function funcMarkAsComplete (){
     //line-through the text of the task
 }
