@@ -29,18 +29,21 @@
     <main>
         
         <section>
-            <h2>Your To-Do-List:</h2>
+            <h3>Add a task:</h3>
             <form>
-                <input type="text" name="" id="newTask" placeholder="Don't forget this!">
-                <button type="button" id="addNewTask" onclick="funcAddNewTask()">add</button>
+                <input type="text" name="" id="newTask">
+                <button class='new-task-btn' type="button" id="addNewTask" onclick="funcAddNewTask()"><i class="fa-regular fa-plus"></i></button>
             </form>
             <ul id='taskList'></ul>
 
         </section>
     </main>
+    
     <footer id="footer">
         <p>&copy; 2023 Lorem ipsum dolor sit amet.</p>
     </footer>
-<script src="index.js"></script>
+
+    <script src="https://kit.fontawesome.com/1d3c3742c4.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
 </html>
