@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: black;
+}
+body{
+    height: 100vh;
+    background-color: #FEFF86;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+        
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: #B9E9FC;
+}
+header ul{
+    display: flex;
+    list-style: none;
+    gap: 1em;
+
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+main{
+    width:350px ;
+    height: 100vh;
+    padding: 1em;
+    overflow: auto;
+}
+footer{
+    padding: 3em;
+    width: 100%;
+    background-color: #B9E9FC;
+    text-align: center;
+}
+section{
+    /* border:1px solid red; */
+}
+section h2{
+    padding: 1rem;
+}
+section form{
+    background-color: #B9E9FC;
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    padding: 0.2rem;
+}
+#addNewTask{
+    font-size: 1rem;
+    height: 3rem;
+    width: 18%;
+    padding: 0.3rem;
+    background-color: #B0DAFF;
+    /* border: none; */
+}
+#newTask{
+    font-size: 1.5rem;
+    padding: 0.3rem;
+    width: 80%;
+    height: 3rem;
+
+}
