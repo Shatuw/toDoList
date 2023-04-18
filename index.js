@@ -1,5 +1,4 @@
 
-
 function funcAddNewTask() {
     const taskList = document.getElementById("taskList");
     const userInput = document.getElementById("newTask").value;
@@ -8,15 +7,12 @@ function funcAddNewTask() {
     let newTaskItem = document.createElement("li");
     newTaskItem.textContent = userInput;
 
-    // Append the new list item to the task list
-    taskList.appendChild(newTaskItem);
-
     // Clear the input field
     document.getElementById("newTask").value = "";
 
     // button to mark the task as complete
     let completeButton = document.createElement("button");
-    completeButton.textContent = "Complete";
+    completeButton.textContent = "Done";
     completeButton.onclick = function() {
     newTaskItem.classList.add("completed");
     taskList.appendChild(newTaskItem); // Move the completed task to the bottom of the list
@@ -29,26 +25,27 @@ function funcAddNewTask() {
     taskList.removeChild(newTaskItem);
     };
   
-    // Append the new list item and buttons to the task list
+    // button to edit the task
+    let editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.onclick = function() {
+        // Display the task text in the input field (without the text from the butttons)
+        document.getElementById("newTask").value = newTaskItem.childNodes[0].textContent;
+        // Remove the task item from the list
+        taskList.removeChild(newTaskItem);
+    };
+    
+    // Add the buttons to the new task item
     newTaskItem.appendChild(completeButton);
     newTaskItem.appendChild(removeButton);
-    taskList.appendChild(newTaskItem);
+    newTaskItem.appendChild(editButton);
 
 
+    // Insert the new task item at the top of the task list
+    taskList.insertBefore(newTaskItem, taskList.firstChild);
 
 }
 
 
-function funcMarkAsComplete (){
-    //line-through the text of the task
-}
-
-function funcChangeTask(){
-    // change the text in the safed task
-}
-
-function funcDeleteTask(){
-    //delete the whohle task from the site
-}
 
 
