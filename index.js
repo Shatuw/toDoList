@@ -58,19 +58,23 @@ function funcAddNewTask() {
 }
 
 
-// // simulate a click event on the submit button
-// const inputField = document.getElementById("newTask");
-// const submitBtn = document.getElementById("addNewTask");
+// // simulate a click event on the submit button - add event listener to the input field	
+//the DOMContentLoaded event ensures that the necessary elements have been loaded before they are manipulated
+document.addEventListener('DOMContentLoaded', () => { 
+    const inputField = document.getElementById('newTask');
+    const submitButton = document.getElementById('addNewTask');
+  
+    inputField.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        submitButton.click();
+      }
+    });
+  });
+ 
 
-// inputField.addEventListener('keydown', e) => {
-//     if (e.key === 'Enter') {
-//         e.preventDefault();
-//         submitBtn.click();
-        
-// }
 
 // empty input field doesnt add a new task
-// return completes add task function - 
 // hover over all buttons & nav links
 // daily quotes
 
