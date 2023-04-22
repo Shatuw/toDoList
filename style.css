@@ -6,76 +6,54 @@
     font-family: 'Finlandica', sans-serif;
 }
 
-
 body{
     height: 100vh;
-    background-color: #FEFF86 !important;
+    background-color: #white !important;
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;  
 }
 
-
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 2em;
     width: 100%;
     flex-wrap: wrap;
     background-color: #B9E9FC;
 }
 
-
-header ul{
-    display: flex;
-    list-style: none;
-    gap: 1em;
-
+header h1{
+    margin: 0px;
 }
-
-
-a{
-    text-decoration: none !important;
-    color: rgb(72, 79, 126)!important;
-}
-
-
-a:hover{
-    text-decoration:line-through !important;
-}
-
 
 .inspo-quote {
     font-family: 'Caveat', cursive;
     font-size: 24px;
-    padding-top: 10px; 
 }
-
 
 main{
-    width:350px ;
+    width:50%;
     height: 100vh;
     padding: 1em;
-    overflow: auto;
+    overflow: none;
 }
 
-
-/* section h3{
-    padding: 1rem;
-} */
-
+section h3{
+    margin:0px;
+}
 
 section form{
     background-color: transparent !important;;
     width: 100%;
-    height: 5rem;
+    height:5rem;
     display: flex;
     align-items: center;
     gap: 0.6rem;
     border-radius: 0.5rem;
 }
-
 
 #addNewTask{
     font-size: 1rem;
@@ -86,14 +64,15 @@ section form{
     /* border: none; */
 }
 
-
 .new-task-btn{
     border:none;
     background-color:#f9f9b3 !important;
+    margin: 3px
  }
 
  .new-task-btn:hover{
-    background-color:#d1d1b2 !important;
+    background-color:#f6f614 !important;
+
  }
 
  li {
@@ -101,23 +80,40 @@ section form{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    text-align: left;
-    margin-right: 67px;
-
-  }
-  
-  li button {
-    align-self: flex-end;
-  }
-
-
-#newTask{
-    font-size: 1.5rem;
-    padding: 0.3rem;
-    width: 80%;
-    height: 3rem;
+    align-items: center;
 }
 
+li button {
+    align-self: flex-end;
+    width: 25px;
+    height: 25px;
+    margin: 6px;
+    background-color: #e2e2ea;
+    border-radius: 10%;
+    border: none;
+}
+
+.task-text {
+    flex: 1;
+    font-size: 18px;
+}
+
+#newTask{
+    font-size: 18px;
+    padding: 0.2rem;
+    width: 100%;
+    height: 2rem;
+}
+
+#addNewTask.new-task-btn {
+    height: 2rem;
+    width: 2rem
+}
+
+#taskList{
+    padding:0;
+
+}
 .tasklist {
     padding-top: 15px;
 }
@@ -129,13 +125,81 @@ section form{
 
 /* hides buttons when completed button is clicked */
 .completed button {
-display: none;
+    display: none;
 }
   
-
-footer{
-    padding: 3em;
-    width: 100%;
-    background-color: #B9E9FC;
-    text-align: center;
+.nav-item a{
+    margin:0px 30px;
+    padding:0px !important;
 }
+.nav-item{
+    position: relative;
+    display: block;
+  }
+  
+.nav-item:before, .nav-item:after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    top: 50%;
+    margin-top: -0.5px;
+    background: black;
+}
+  
+/* .nav-item:before {
+    left: -.1px;
+} */
+
+.nav-item:after {
+    /* right: .1px; */
+    background: black;
+    transition: width 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+  
+.nav-item:hover:before {
+    background: black;
+    width: 100%;
+    transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+  
+.nav-item:hover:after {
+    background: transparent;
+    width: 100%;
+    transition: 0s;
+}
+  
+.navbar-brand-custom {
+    background-image: linear-gradient(
+        to right,
+        #54b3d6,
+        #54b3d6 50%,
+        #000 50%
+        );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+    
+.navbar-brand-custom:before {
+    content: '';
+    background: #54b3d6;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+    
+.navbar-brand-custom:hover {
+     background-position: 0;
+}
+    
+
