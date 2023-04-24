@@ -3,7 +3,8 @@ function funcAddNewTask() {
     const taskList = document.getElementById("taskList"); // get UL-Position
     const userInput = document.getElementById("newTask").value; // get User-Input
 
-if (userInput != ''){
+if (userInput != ''){ //testing if empty input-field
+    
     // Create a new list item and set its text content to the user's input
     let newTaskItem = document.createElement("li");
     let taskText = document.createElement("span"); // create a span for the task text
@@ -76,9 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
  
 
-
-// empty input field doesnt add a new task
 // hover over all buttons & nav links
 // daily quotes
+// store Tasks in "LocalStorage" 
 
 }// funcAddNewTask end
