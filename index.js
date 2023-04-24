@@ -1,8 +1,9 @@
 
 function funcAddNewTask() {
-    const taskList = document.getElementById("taskList");
-    const userInput = document.getElementById("newTask").value;
+    const taskList = document.getElementById("taskList"); // get UL-Position
+    const userInput = document.getElementById("newTask").value; // get User-Input
 
+if (userInput != ''){
     // Create a new list item and set its text content to the user's input
     let newTaskItem = document.createElement("li");
     newTaskItem.textContent = userInput;
@@ -17,6 +18,7 @@ function funcAddNewTask() {
     newTaskItem.classList.add("completed");
     taskList.appendChild(newTaskItem); // Move the completed task to the bottom of the list
     };
+    newTaskItem.appendChild(completeButton);
 
     // button to remove the task
     let removeButton = document.createElement("button");
@@ -24,7 +26,8 @@ function funcAddNewTask() {
     removeButton.onclick = function() {
     taskList.removeChild(newTaskItem);
     };
-  
+    newTaskItem.appendChild(removeButton);
+
     // button to edit the task
     let editButton = document.createElement("button");
     editButton.textContent = "Edit";
@@ -34,16 +37,15 @@ function funcAddNewTask() {
         // Remove the task item from the list
         taskList.removeChild(newTaskItem);
     };
-    
-    // Add the buttons to the new task item
-    newTaskItem.appendChild(completeButton);
-    newTaskItem.appendChild(removeButton);
     newTaskItem.appendChild(editButton);
 
 
     // Insert the new task item at the top of the task list
     taskList.insertBefore(newTaskItem, taskList.firstChild);
-
+}//IF-Ende
+else{
+    alert('Please insert write down your Task.');
+}   
 }
 
 
