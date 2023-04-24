@@ -81,10 +81,4 @@ document.addEventListener('DOMContentLoaded', () => {
 // hover over all buttons & nav links
 // daily quotes
 
-
-
-
-
-
-
-
+}// funcAddNewTask end
