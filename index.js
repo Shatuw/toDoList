@@ -1,4 +1,9 @@
 
+import quotes from './quotes.js';
+// const { quotes } = require('./quotes.js');
+
+
+
 function funcAddNewTask() {
     const taskList = document.getElementById("taskList"); // get UL-Position
     const userInput = document.getElementById("newTask").value; // get User-Input
@@ -52,33 +57,52 @@ if (userInput != ''){ //testing if empty input-field
     newTaskItem.appendChild(editButton);
     // newTaskItem.appendChild(removeButton);
  
-
     // Add a class to the task text span
     taskText.classList.add("task-text");
 
-
     // Insert the new task item at the top of the task list
     taskList.insertBefore(newTaskItem, taskList.firstChild);     
+  }
+
+
+  // simulate a click event on the submit button - add event listener to the input field	
+  //the DOMContentLoaded event ensures that the necessary elements have been loaded before they are manipulated
+  document.addEventListener('DOMContentLoaded', () => { 
+      const inputField = document.getElementById('newTask');
+      const submitButton = document.getElementById('addNewTask');
+    
+      inputField.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          submitButton.click();
+        }
+      });
+    });
+ }// funcAddNewTask end
+
+
+  //display a new quote & author from quotes.js each time the page loads 
+ function displayRandomQuote() {
+  const quoteIndex = Math.floor(Math.random() * quotes.length);
+  const quote = quotes[quoteIndex];
+  const quoteText = quote.text;
+  const quoteAuthor = quote.author;
+  // get the element to display the quote text
+  const quoteTextElement = document.querySelector('.inspo-quote');
+  // set the quote text as the content of the element
+  quoteTextElement.textContent = quoteText;
+  
+  // get the element to display the quote author
+  const quoteAuthorElement = document.querySelector('.inspo-author');
+  // set the quote author as the content of the element
+  quoteAuthorElement.textContent = quoteAuthor;
 }
 
+// call the function to display a random quote when the page loads
+displayRandomQuote()
 
-// // simulate a click event on the submit button - add event listener to the input field	
-//the DOMContentLoaded event ensures that the necessary elements have been loaded before they are manipulated
-document.addEventListener('DOMContentLoaded', () => { 
-    const inputField = document.getElementById('newTask');
-    const submitButton = document.getElementById('addNewTask');
-  
-    inputField.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        submitButton.click();
-      }
-    });
-  });
- 
-
+// OTHER IDEAS:
 // hover over all buttons & nav links
 // daily quotes
 // store Tasks in "LocalStorage" 
 
-}// funcAddNewTask end
