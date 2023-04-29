@@ -1,4 +1,22 @@
 
+const quotes = [
+    "It's not that I'm so smart, it's just that I stay with problems longer. &nbsp;&nbsp;- Albert Einstein",  
+    "The only way to do great work is to love what you do. &nbsp;&nbsp;- Steve Jobs",  
+    "You miss 100% of the shots you don't take. &nbsp;&nbsp;- Wayne Gretzky",  
+    "Believe you can and you're halfway there. &nbsp;&nbsp;- Theodore Roosevelt",  
+    "Success is not final, failure is not fatal: It is the courage to continue that counts. &nbsp;&nbsp;- Winston S. Churchill",
+    "Life is 10% what happens to us and 90% how we react to it. &nbsp;&nbsp;- Charles R. Swindoll",
+    "Innovation distinguishes between a leader and a follower. &nbsp;&nbsp;- Steve Jobs",
+    "The best way to predict the future is to invent it. &nbsp;&nbsp;- Alan Kay"
+];
+
+function displayRandomQuote() {
+    const quoteElement = document.querySelector('.inspo-quote');
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteElement.innerHTML = quotes[randomIndex];
+}
+displayRandomQuote();
+
 function funcAddNewTask() {
     const taskList = document.getElementById("taskList"); // get UL-Position
     const userInput = document.getElementById("newTask").value; // get User-Input
@@ -73,7 +91,6 @@ function funcAddNewTask() {
 
 
 // OTHER IDEAS:
-// daily quotes
 // store Tasks in "LocalStorage" 
 // hover over all buttons & nav links
 
