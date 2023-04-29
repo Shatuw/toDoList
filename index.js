@@ -14,6 +14,18 @@ if (userInput != ''){ //testing if empty input-field
     // Clear the input field
     document.getElementById("newTask").value = "";
 
+    // button to remove the task
+    let removeButton = document.createElement("button");
+    let icon2 = document.createElement("i");
+    icon2.className = "fas fa-xmark"; // fa classes for the x icon
+    removeButton.appendChild(icon2);
+    removeButton.onclick = removeTask
+    newTaskItem.appendChild(removeButton);
+
+    function removeTask() {
+        taskList.removeChild(newTaskItem);
+    };
+    
     // button to mark the task as complete
     let completeButton = document.createElement("button");
     let icon1 = document.createElement("i");
@@ -22,18 +34,14 @@ if (userInput != ''){ //testing if empty input-field
     completeButton.onclick = function() {
         newTaskItem.classList.add("completed");
         taskList.appendChild(newTaskItem); // Move the completed task to the bottom of the list
+        removeButton.style.display = "inline"; // Show the remove button
+        editButton.style.display = "inline"; // Show the remove button
+
+
     };
     newTaskItem.appendChild(completeButton);
 
-    // button to remove the task
-    let removeButton = document.createElement("button");
-    let icon2 = document.createElement("i");
-    icon2.className = "fas fa-xmark"; // fa classes for the x icon
-    removeButton.appendChild(icon2);
-    removeButton.onclick = function() {
-        taskList.removeChild(newTaskItem);
-    };
-    newTaskItem.appendChild(removeButton);
+    
 
     // button to edit the task
     let editButton = document.createElement("button");
@@ -80,5 +88,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // hover over all buttons & nav links
 // daily quotes
 // store Tasks in "LocalStorage" 
+// display remove button for completed tasks
 
 }// funcAddNewTask end
