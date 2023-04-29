@@ -3,7 +3,7 @@ function funcAddNewTask() {
     const taskList = document.getElementById("taskList"); // get UL-Position
     const userInput = document.getElementById("newTask").value; // get User-Input
 
-if (userInput != ''){ //testing if empty input-field
+  if (userInput != ''){ //testing if empty input-field
     
     // Create a new list item and set its text content to the user's input
     let newTaskItem = document.createElement("li");
@@ -21,7 +21,6 @@ if (userInput != ''){ //testing if empty input-field
     removeButton.appendChild(icon2);
     removeButton.onclick = removeTask
     newTaskItem.appendChild(removeButton);
-
     function removeTask() {
         taskList.removeChild(newTaskItem);
     };
@@ -31,51 +30,38 @@ if (userInput != ''){ //testing if empty input-field
     let icon1 = document.createElement("i");
     icon1.className = "fas fa-check"; // fa classes for the check icon
     completeButton.appendChild(icon1);
+    newTaskItem.appendChild(completeButton);
     completeButton.onclick = function() {
         newTaskItem.classList.add("completed");
         taskList.appendChild(newTaskItem); // Move the completed task to the bottom of the list
         removeButton.style.display = "inline"; // Show the remove button
         editButton.style.display = "inline"; // Show the remove button
-
-
     };
-    newTaskItem.appendChild(completeButton);
-
-    
 
     // button to edit the task
     let editButton = document.createElement("button");
     let icon3 = document.createElement("i");
     icon3.className = "fas fa-pencil"; // fa classes for the pencil icon
     editButton.appendChild(icon3);
+    newTaskItem.appendChild(editButton);
     editButton.onclick = function() {
         // Display the task text in the input field (without the text from the butttons)
         document.getElementById("newTask").value = taskText.textContent;
         // Remove the task item from the list
         taskList.removeChild(newTaskItem);
     };
-    
-    // Add the buttons to the new task item
-    // newTaskItem.appendChild(completeButton);
-    newTaskItem.appendChild(editButton);
-    // newTaskItem.appendChild(removeButton);
  
-
     // Add a class to the task text span
     taskText.classList.add("task-text");
 
-
     // Insert the new task item at the top of the task list
     taskList.insertBefore(newTaskItem, taskList.firstChild);     
-}
+  }
 
-
-// // simulate a click event on the submit button - add event listener to the input field	
-//the DOMContentLoaded event ensures that the necessary elements have been loaded before they are manipulated
-document.addEventListener('DOMContentLoaded', () => { 
+  // simulate a click event on the submit button - add event listener to the input field. the DOMContentLoaded event ensures that the necessary elements have been loaded before they are manipulated.
+  document.addEventListener('DOMContentLoaded', () => { 
     const inputField = document.getElementById('newTask');
     const submitButton = document.getElementById('addNewTask');
-  
     inputField.addEventListener('keydown', (event) => {
       if (event.key === 'Enter') {
         event.preventDefault();
@@ -83,11 +69,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
- 
+}// funcAddNewTask end
 
-// hover over all buttons & nav links
+
+// OTHER IDEAS:
 // daily quotes
 // store Tasks in "LocalStorage" 
-// display remove button for completed tasks
+// hover over all buttons & nav links
 
-}// funcAddNewTask end
+
