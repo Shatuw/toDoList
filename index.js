@@ -48,9 +48,9 @@ if (userInput != ''){ //testing if empty input-field
     };
     
     // Add the buttons to the new task item
-    newTaskItem.appendChild(completeButton);
+    // newTaskItem.appendChild(completeButton);
     newTaskItem.appendChild(editButton);
-    newTaskItem.appendChild(removeButton);
+    // newTaskItem.appendChild(removeButton);
  
 
     // Add a class to the task text span
