@@ -138,6 +138,8 @@ window.onload = () => {
           completeButton.onclick = function() {
               newTaskItem.classList.add("completed");
               taskList.appendChild(newTaskItem); // Move the completed task to the bottom of the list
+              removeButton.style.display = "inline"; // Show the remove button
+              editButton.style.display = "inline"; // Show the remove button
           };
           newTaskItem.appendChild(completeButton);
 
