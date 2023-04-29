@@ -1,4 +1,24 @@
 
+// quote changes each time page reloads
+const quotes = [
+    "It's not that I'm so smart, it's just that I stay with problems longer. &nbsp;&nbsp;- Albert Einstein",  
+    "The only way to do great work is to love what you do. &nbsp;&nbsp;- Steve Jobs",  
+    "You miss 100% of the shots you don't take. &nbsp;&nbsp;- Wayne Gretzky",  
+    "Believe you can and you're halfway there. &nbsp;&nbsp;- Theodore Roosevelt",  
+    "Success is not final, failure is not fatal: It is the courage to continue that counts. &nbsp;&nbsp;- Winston S. Churchill",
+    "Life is 10% what happens to us and 90% how we react to it. &nbsp;&nbsp;- Charles R. Swindoll",
+    "Innovation distinguishes between a leader and a follower. &nbsp;&nbsp;- Steve Jobs",
+    "The best way to predict the future is to invent it. &nbsp;&nbsp;- Alan Kay"
+];
+
+function displayRandomQuote() {
+    const quoteElement = document.querySelector('.inspo-quote');
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    quoteElement.innerHTML = quotes[randomIndex];
+}
+displayRandomQuote();
+
+// adding a new task
 function funcAddNewTask() {
     const taskList = document.getElementById("taskList"); // get UL-Position
     const userInput = document.getElementById("newTask").value; // get User-Input
@@ -49,11 +69,9 @@ function funcAddNewTask() {
         document.getElementById("newTask").value = taskText.textContent;
         // Remove the task item from the list
         taskList.removeChild(newTaskItem);
-
     };
  
     // Add a class to the task text span
-
     taskText.classList.add("task-text");
 
     // Insert the new task item at the top of the task list
@@ -73,12 +91,6 @@ function funcAddNewTask() {
   });
 
 };//End of funcAddNewTask
-
-
-
-// OTHER IDEAS:
-// daily quotes
-
 
 
 // store Tasks in/from "LocalStorage": 
@@ -162,7 +174,6 @@ window.onload = () => {
   else {
     console.log('There is nothing in localStorage to load from.')
   };
-
 }
 
 // clear all localStorage
@@ -173,7 +184,6 @@ clearAllBtn.addEventListener("click", () => {
 });
 
 
-// hover over all buttons & nav links
 
 
 
